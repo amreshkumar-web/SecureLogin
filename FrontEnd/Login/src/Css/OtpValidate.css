@@ -1,0 +1,77 @@
+.otpSectionParent{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.154);
+    z-index: 9999;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OtpContainer{
+    width: auto;
+    height: auto;
+    padding:10px;
+    background-color: var( --bg-secondary-dark);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 5px;
+}
+.otpInputDiv{
+    width: 25rem;
+   /*  background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+
+.otpInputDiv > span{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    color: var(  --light-gray-text);
+    font-size: 1.2rem;
+}
+.otpInputField{
+    height: 4rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--bg-profile-gray);
+    padding-left:10px ;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.otpAcceptDecline{
+    height: 5rem;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.otpAcceptDecline button{
+    height: 80%;
+    width: 49%;
+    border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.otpSubmit{
+    background-color: var( --accept-btn);
+}
+
+.otpDecline{
+background-color: red;
+}
