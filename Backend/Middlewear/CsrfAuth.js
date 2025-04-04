@@ -8,13 +8,17 @@ const CsrfAuth = async (req,resp,next) =>{
 try {
     
 const checkingToken = await bcrypt.compare(csrfToken,hashedCsrfToken);
-clearCookie(resp);
-if(!checkingToken) return resp.status(406).json({message:"Bad Request"});
+
+if(!checkingToken){
+    clearCookies(resp);
+    return resp.status(406).json({message:"Bad Request"});
+} 
 
 next();
 
 } catch (error) {
     console.log("Error in CSRF AUth", error);
+    clearCookies(resp);
 return resp.status(500).json({message:"Something went wrong"})
 }
 
