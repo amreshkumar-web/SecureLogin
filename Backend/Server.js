@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(xss());
 
 app.use(helmet());
-app.use(helmet.xssFilter()); 
+
 app.use(
   cors({
     origin: "http://localhost:5173", // Allow requests from frontend

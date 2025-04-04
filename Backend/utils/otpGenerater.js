@@ -21,10 +21,9 @@ redisMapData.operation = operation;
     await redisDb.expire(`${operation}-${username}`, 300);
 
     if(redisMap===0 || redisMap===1){
-        
         return true;
     }
-    return false;
+    return true;
 }
 else{
     console.log('Failed to send OTP');

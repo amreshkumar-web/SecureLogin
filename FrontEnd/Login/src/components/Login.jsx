@@ -120,7 +120,7 @@ hitLoginApi("/user/login",formData);
 
 useEffect(() => {
     const validateToken = async () => {
-        console.log("start")
+   
       try {
         const response = await api.get("/user/userValidation")
   
@@ -170,7 +170,7 @@ try {
             className: "custom-toast",
           });  
           
-     console.log(response.data)
+   
      localStorage.setItem("xCsrfToken", response.data.xCsrfToken);
         navigate("/DashBoard");
 
@@ -209,6 +209,7 @@ try {
 
 
 const hitRegistrationApi = async (url,data) =>{
+  if(password !== confirmPassword) return toast.warn("Confirm Password not match")
   setIsLaoding(true);
     try {
         const response = await api.post(url,data,{
@@ -309,14 +310,19 @@ try {
 
 
 return(
-    isLoading ? <Loading /> :
+  
+    
     <>
+    {
+      isLoading && <Loading /> 
+    }
     {
       forgetPassword &&  <ResetPassword  setTab={setForgetPassword}/>
     }
     {
       otpTab && <OtpValidate handelOtpFunction={handelOtp} username={email} setTab={setOtpTab}/> 
     }
+   
     <div className="loginParent">
       <div className="loginWholeContent">
     <div style={(selectedContainer==="singUp")?{borderColor:"#19CC8B"}:{}} className="loginProfileBlock">
